@@ -73,7 +73,7 @@ class Comparison extends ((Elem, Elem) => XmlDiff) {
                     + e1.label + ">: \n\t" + results.mkString("", "\n\t", ""))
             } else {
               es = es.tail
-              fs = fs.remove(_ == theGoodOne.get)
+              fs = fs.filterNot(_ == theGoodOne.get)
             }
           }
           
